@@ -1,5 +1,5 @@
 run: Sandbox.exe
-		dotnet run ./bin/Debug/Learning02.dll
+		dotnet run ./bin/Debug/Sandbox.dll
 
 build: Sandbox.exe
 
