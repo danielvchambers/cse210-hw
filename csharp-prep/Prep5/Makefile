@@ -1,10 +1,10 @@
-run: Prep3.exe
-		dotnet run ./bin/Debug/Prep3.dll
+run: Prep5.exe
+		dotnet run ./bin/Debug/Prep5.dll
 
-build: Prep3.exe
+build: Prep5.exe
 
-Prep3.exe: *.cs
-		dotnet build --configuration Debug ./Prep3.csproj /property:GenerateFullPaths=true /consoleloggerparameters:NoSummary
+Prep5.exe: *.cs
+		dotnet build --configuration Debug ./Prep5.csproj /property:GenerateFullPaths=true /consoleloggerparameters:NoSummary
 
 clean:
 		rm -rf ./bin ./obj
