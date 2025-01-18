@@ -1,0 +1,7 @@
+Version Control is a type of system that allows people to organize there files.
+One of the benefits of using a Version Control system is that you can have
+multiple people working on the same project and everyone can see what everyone
+has done and why. One command that might be used is "git commit -m 'type commit
+message here". This command is used to commit your work from your computer to
+get it ready to go to a server. The message is what will appear when someone
+goes looking for why certain changes were made so they need to have meaning.
