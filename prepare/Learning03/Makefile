@@ -1,10 +1,10 @@
-run: Learning02.exe
-		dotnet run ./bin/Debug/Learning02.dll
+run: Learning03.exe
+		dotnet run ./bin/Debug/Learning03.dll
 
-build: Learning02.exe
+build: Learning03.exe
 
-Learning02.exe: *.cs
-		dotnet build --configuration Debug ./Learning02.csproj /property:GenerateFullPaths=true /consoleloggerparameters:NoSummary
+Learning03.exe: *.cs
+		dotnet build --configuration Debug ./Learning03.csproj /property:GenerateFullPaths=true /consoleloggerparameters:NoSummary
 
 clean:
 		rm -rf ./bin ./obj
