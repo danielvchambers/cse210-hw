@@ -19,8 +19,9 @@ class Program
             _1scripture.HideRandomWords();
             Console.WriteLine("1.1");
             Console.Write("\nTo end early type 'quit' here -> ");
-            string _repeat = Console.ReadLine();
             Console.WriteLine("1.2");
+            string _repeat = Console.ReadLine();
+            Console.WriteLine("1.3");
             if (_repeat == "quit")
             {
                 quit = true;
