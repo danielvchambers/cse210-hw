@@ -31,6 +31,7 @@ class Program
             {
                 Console.WriteLine("3");
             }
+            Console.WriteLine("4");
         }
 
     }
