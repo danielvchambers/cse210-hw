@@ -11,10 +11,17 @@ class Program
         Console.Write("Copy and paste the scripture you would like to memorize: ");
         string _scripture = Console.ReadLine();
         Scripture _1scripture = new Scripture(_reference, _scripture);
-        while (quit != true || end != _1scripture.PEnd())
+        while (quit != true)
         {
+            int test = _1scripture.PEnd();
+            Console.WriteLine(test);
             end = 0;
             end += _1scripture.AddInt();
+            if (end == _1scripture.PEnd())
+            {
+                quit = true;
+                Console.WriteLine("4");
+            }
             _1scripture.DisplayScripture();
             _1scripture.HideRandomWords();
             Console.WriteLine("1.1");
@@ -31,7 +38,7 @@ class Program
             {
                 Console.WriteLine("3");
             }
-            Console.WriteLine("4");
+            Console.WriteLine("5");
         }
 
     }
