@@ -17,6 +17,7 @@ class Program
             end += _1scripture.AddInt();
             _1scripture.DisplayScripture();
             _1scripture.HideRandomWords();
+            Console.Write("\nTo end early type 'quit' here > ");
             string _repeat = Console.ReadLine();
             if (_repeat == "quit")
             {
