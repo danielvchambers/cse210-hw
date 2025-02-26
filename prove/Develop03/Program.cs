@@ -17,14 +17,19 @@ class Program
             end += _1scripture.AddInt();
             _1scripture.DisplayScripture();
             _1scripture.HideRandomWords();
+            Console.WriteLine("1.1");
             Console.Write("\nTo end early type 'quit' here -> ");
             string _repeat = Console.ReadLine();
+            Console.WriteLine("1.2");
             if (_repeat == "quit")
             {
                 quit = true;
+                Console.WriteLine("2");
             }
             else if (_repeat == "")
-            { }
+            {
+                Console.WriteLine("3");
+            }
         }
 
     }
