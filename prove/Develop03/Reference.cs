@@ -58,6 +58,10 @@ public class Reference
                 {
                     _verse += _sReference[index];
                 }
+                else
+                {
+                    _verse += _sReference[index];
+                }
             }
         }
     }

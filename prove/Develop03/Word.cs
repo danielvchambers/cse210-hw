@@ -14,6 +14,10 @@ public class Word
     {
         _word = word;
     }
+    public bool GetHidden()
+    {
+        return _isHidden;
+    }
     public void HideWord()
     {
         _isHidden = true;

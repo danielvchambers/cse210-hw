@@ -18,11 +18,49 @@ public class Scripture
         Console.Write(_reference.GetReference());
         foreach (Word word in _words)
         {
-            Console.Write($"{word.GetWord()} ");
+            if (word.GetHidden() == true)
+            {
+                foreach (char c in word.GetWord())
+                {
+                    Console.Write("_");
+                }
+                Console.Write(" ");
+            }
+            else if (word.GetHidden() == false)
+            {
+                Console.Write($"{word.GetWord()} ");
+            }
         }
+        Console.WriteLine("\n");
+    }
+    public int PEnd()
+    {
+        return _words.Count();
     }
     public void HideRandomWords()
     {
-
+        Random rand = new Random();
+        int num = 0;
+        while (num != 3)
+        {
+            num += 1;
+            int rndInt = rand.Next(_words.Count());
+            _words[rndInt].HideWord();
+        }
+    }
+    public int AddInt()
+    {
+        foreach (Word w in _words)
+        {
+            if (w.GetHidden() == true)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        return 0;
     }
 }
