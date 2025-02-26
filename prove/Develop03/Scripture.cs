@@ -5,7 +5,7 @@ public class Scripture
     public Scripture(string reference, string scripture)
     {
         string[] words = scripture.Split(" ");
-        Reference _reference = new Reference(reference);
+        _reference = new Reference(reference);
 
         foreach (string word in words)
         {
