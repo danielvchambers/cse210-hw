@@ -57,17 +57,6 @@ public class Scripture
         }
     }
 
-    //public void HideRandomWords()
-    //{
-    //    Random rand = new Random();
-    //    int num = 0;
-    //    while (num != 3)
-    //    {
-    //        num += 1;
-    //        int rndInt = rand.Next(_words.Count());
-    //        _words[rndInt].HideWord();
-    //    }
-    //}
     public int AddInt()
     {
         foreach (Word w in _words)
