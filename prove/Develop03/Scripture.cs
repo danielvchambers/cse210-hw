@@ -2,6 +2,7 @@ public class Scripture
 {
     private Reference _reference;
     private List<Word> _words = new List<Word>();
+    private Random _random = new Random();
     public Scripture(string reference, string scripture)
     {
         string[] words = scripture.Split(" ");
@@ -37,17 +38,36 @@ public class Scripture
     {
         return _words.Count();
     }
-    public void HideRandomWords()
+    public void HideRandomWords(int numberOfWordsToHide = 3) // Added parameter
     {
-        Random rand = new Random();
-        int num = 0;
-        while (num != 3)
+        int hiddenCount = 0;
+        List<int> unhiddenIndexes = _words.Select((word, index) => new { word, index })
+                                        .Where(item => !item.word.GetHidden())
+                                        .Select(item => item.index)
+                                        .ToList();
+
+        while (hiddenCount < numberOfWordsToHide && unhiddenIndexes.Count > 0)
         {
-            num += 1;
-            int rndInt = rand.Next(_words.Count());
-            _words[rndInt].HideWord();
+            int randomIndexIndex = _random.Next(unhiddenIndexes.Count);
+            int randomIndex = unhiddenIndexes[randomIndexIndex];
+
+            _words[randomIndex].HideWord();
+            unhiddenIndexes.RemoveAt(randomIndexIndex);
+            hiddenCount++;
         }
     }
+
+    //public void HideRandomWords()
+    //{
+    //    Random rand = new Random();
+    //    int num = 0;
+    //    while (num != 3)
+    //    {
+    //        num += 1;
+    //        int rndInt = rand.Next(_words.Count());
+    //        _words[rndInt].HideWord();
+    //    }
+    //}
     public int AddInt()
     {
         foreach (Word w in _words)
@@ -62,5 +82,9 @@ public class Scripture
             }
         }
         return 0;
+    }
+    public bool AllWordsHidden()
+    {
+        return _words.All(word => word.GetHidden());
     }
 }
